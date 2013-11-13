@@ -2,13 +2,14 @@
   "name": "brim",
   "version": "0.0.1",
   "description": "sample app for messaging and collaboration",
+  "author": "Gabriel M <gmajivu@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/gabeno/brim.git"
   },
   "engines": {
     "node": ">=0.10.*"
-    },
+  },
   "private": true,
   "scripts": {
     "start": "node app.js",
