@@ -12,7 +12,7 @@
   },
   "private": true,
   "scripts": {
-    "start": "node app.js",
+    "start": "node server.js",
     "test": "./node_modules/bin/mocha"
   },
   "dependencies": {
@@ -31,6 +31,8 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-handlebars": "~0.6.0",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-stylus": "~0.10.0"
+    "grunt-contrib-stylus": "~0.10.0",
+    "grunt-nodemon": "~0.1.2",
+    "grunt-concurrent": "~0.4.1"
   }
 }

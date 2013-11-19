@@ -81,6 +81,32 @@ module.exports = function(grunt) {
         'views/**/*.hbs'
       ],
       tasks: ['jshint', 'simplemocha']
+    },
+
+    // nodemon: run server with the following options
+    nodemon: {
+      dev: {
+        options: {
+          file: 'server.js',
+          args: ['dev'],
+          nodeArgs: ['--debug'],
+          ignoredFiles: ['node_modules/**'],
+          delayTime: 2,
+          env: {
+            PORT: '3000'
+          }
+        }
+      }
+    },
+
+    // concurrent: run watch and nodemon concurrently
+    concurrent: {
+      target: {
+        tasks: ['nodemon', 'watch'],
+        options: {
+          logConcurrentOutput: true
+        }
+      }
     }
   });
 
@@ -90,12 +116,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-simple-mocha');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-nodemon');
+  grunt.loadNpmTasks('grunt-concurrent');
 
 
   // register tasks
   // gruntRegisterTask
   grunt.registerTask('test', ['jshint', 'simplemocha']);
   grunt.registerTask('styles', ['stylus']);
-  grunt.registerTask('server', ['watch']);
+  grunt.registerTask('server', ['concurrent:target']);
   //grunt.registerTask('default', ['uglify', 'concat']);
 };
