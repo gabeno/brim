@@ -3,6 +3,10 @@
  * GET home page.
  */
 
+
 exports.index = function(req, res){
-  res.render('index', { title: 'Express' });
+  res.render('main', {
+    title: 'Brim - Messaging and Collaboration Tool for Customer Service Teams',
+    layout: 'layouts/landing'
+  });
 };
