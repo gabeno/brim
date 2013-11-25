@@ -13,7 +13,7 @@ module.exports = function(grunt) {
           'include css': true
         },
         files: {
-          'dist/styles/pure-custom.min.css': ['public/stylesheets/style.styl']
+          'dist/styles/brim-min.css': ['public/stylesheets/style.styl']
         }
       }
     },
@@ -44,12 +44,13 @@ module.exports = function(grunt) {
       files: {
         src: [
           '*.js',
-          'public/javascripts/**/*.js',
+          'public/js/**/*.js',
           'test/**/*.js',
           'routes/**/*.js',
           'models/**/*.js'
         ]
-      }
+      },
+      ignores: ['public/js/lib/**/*.js']
     },
 
     // uglify: minify js, css files
@@ -71,16 +72,27 @@ module.exports = function(grunt) {
       }
     },
 
+    // copy image files to dist
+    copy: {
+      main: {
+        files: [
+          { expand: true, cwd: 'public/images', src: ['**'], dest: 'dist/img', filter: 'isFile' },
+          { expand: true, cwd: 'public/stylesheets/fonts', src: ['**'], dest: 'dist/styles/fonts' },
+          { expand: true, cwd: 'public/stylesheets/vendor/fa-4.0.3', src: ['**'], dest: 'dist/styles/fa' }
+        ]
+      }
+    },
+
     // watch: track files for changes
     watch: {
       files: [
         'Gruntfile.js',
         'test/**/*.js',
-        'public/stylesheets/*.styl',
+        'public/**/*',
         'routes/*.js',
         'views/**/*.hbs'
       ],
-      tasks: ['jshint', 'simplemocha']
+      tasks: ['stylus', 'copy:main']
     },
 
     // nodemon: run server with the following options
@@ -118,6 +130,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-concurrent');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
 
   // register tasks
