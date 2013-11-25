@@ -14,7 +14,7 @@ var hbs = require('express-hbs');
 var app = express();
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 5000);
 app.set('views', __dirname + '/views');
 app.engine('hbs', hbs.express3({
   partialsDir: __dirname + '/views/partials',
