@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title>{{title}}</title>
+  <title>Brim - Messaging and Collaboration Tool for Customer Service Teams</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
   <link href="/styles/brim-min.css" rel="stylesheet" />
@@ -20,14 +20,38 @@
     {{> header}}
   </header>
 
-  {{!-- content section with body content --}}
+  {{!-- main content --}}
   <article class="main">
-    {{> landing-content}}
+    {{!-- index page --}}
+    {{#unless index}}
+      {{> landing-content}}
+    {{/unless}}
+
+    {{!-- plans and pricing page --}}
+    {{#unless plans}}
+      {{> landing-plans}}
+    {{/unless}}
+
+    {{!-- email opt-in page --}}
+    {{#unless optIn}}
+      {{> landing-opt-in}}
+    {{/unless}}
+
+    {{!-- thank you page --}}
+    {{#unless thankyou}}
+      {{> landing-thankyou}}
+    {{/unless}}
   </article>
 
   {{!-- footer section --}}
   <footer class="footer">
     {{> footer}}
   </footer>
+
+  {{> scripts/brim}}
+
+  {{#if settings.PROD_MODE}}
+  {{> scripts/ga}}
+  {{/if}}
 </body>
 </html>
