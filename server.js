@@ -22,7 +22,7 @@ app.engine('hbs', hbs.express3({
   contentHelperName: 'content'
 }));
 app.set('view engine', 'hbs');
-app.use(express.favicon());
+app.use(express.favicon('img/favicon.ico'));
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
@@ -35,8 +35,9 @@ app.use(express.static(path.join(__dirname, 'dist')));
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
-  mongoose.connect('mongodb://localhost/brim');
 }
+
+mongoose.connect(process.env.MONGOHQ_URI || 'mongodb://localhost/brim');
 
 // set production constant
 app.set('PROD_MODE', ('production' === app.get('env')));

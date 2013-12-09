@@ -1,57 +1,57 @@
 <!doctype html>
 <html>
-<head>
-  <title>Brim - Messaging and Collaboration Tool for Customer Service Teams</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
-  <link href="/styles/brim-min.css" rel="stylesheet" />
-  <link href="/styles/fa/css/font-awesome.min.css" rel="stylesheet" />
-  {{!-- <link href="/stylesheets/vendor/bootstrap.css" rel="stylesheet" /> --}}
+  <head>
+    <title>Brim - Messaging and Collaboration Tool for Customer Service Teams</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
+    <link href="/styles/brim-min.css" rel="stylesheet" />
+    <link href="/styles/fa/css/font-awesome.min.css" rel="stylesheet" />
+    {{!-- <link href="/stylesheets/vendor/bootstrap.css" rel="stylesheet" /> --}}
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-  <![endif]-->
-</head>
-<body>
-  {{!-- header section with logo and navigation --}}
-  <header class="header-navigation">
-    {{> header}}
-  </header>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    {{!-- header section with logo and navigation --}}
+    <header class="header-navigation">
+      {{> header}}
+    </header>
 
-  {{!-- main content --}}
-  <article class="main">
-    {{!-- index page --}}
-    {{#unless index}}
-      {{> landing-content}}
-    {{/unless}}
+    {{!-- main content --}}
+    <article class="main">
+      {{!-- index page --}}
+      {{#unless index}}
+        {{> landing-content}}
+      {{/unless}}
 
-    {{!-- plans and pricing page --}}
-    {{#unless plans}}
-      {{> landing-plans}}
-    {{/unless}}
+      {{!-- plans and pricing page --}}
+      {{#unless plans}}
+        {{> landing-plans}}
+      {{/unless}}
 
-    {{!-- email opt-in page --}}
-    {{#unless optIn}}
-      {{> landing-opt-in}}
-    {{/unless}}
+      {{!-- email opt-in page --}}
+      {{#unless optIn}}
+        {{> landing-opt-in}}
+      {{/unless}}
 
-    {{!-- thank you page --}}
-    {{#unless thankyou}}
-      {{> landing-thankyou}}
-    {{/unless}}
-  </article>
+      {{!-- thank you page --}}
+      {{#unless thankyou}}
+        {{> landing-thankyou}}
+      {{/unless}}
+    </article>
 
-  {{!-- footer section --}}
-  <footer class="footer">
-    {{> footer}}
-  </footer>
+    {{!-- footer section --}}
+    <footer class="footer">
+      {{> footer}}
+    </footer>
 
-  {{> scripts/brim}}
+    {{> scripts/brim}}
 
-  {{#if settings.PROD_MODE}}
-  {{> scripts/ga}}
-  {{/if}}
-</body>
+    {{#if settings.PROD_MODE}}
+    {{> scripts/ga}}
+    {{/if}}
+  </body>
 </html>
