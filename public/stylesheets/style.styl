@@ -3,150 +3,228 @@
 
 // font-face used
 @font-face
-  font-family pt_sans_narrowregular
+  font-family pt_sans
   src url('fonts/PT-Sans-Narrow/PTN57F-webfont.eot')
   src url('fonts/PT-Sans-Narrow/PTN57F-webfont.eot?#iefix') format('embedded-opentype'),
       url('fonts/PT-Sans-Narrow/PTN57F-webfont.woff') format('woff'),
       url('fonts/PT-Sans-Narrow/PTN57F-webfont.ttf') format('truetype'),
-      url('fonts/PT-Sans-Narrow/PTN57F-webfont.svg#pt_sans_narrowregular') format('svg')
+      url('fonts/PT-Sans-Narrow/PTN57F-webfont.svg#pt_sans') format('svg')
   font-weight normal
   font-style normal
 
 @font-face
-  font-family pt_sans_narrowbold
-  src url('fonts/PT-Sans-Narrow/PTN77F-webfont.eot')
-  src url('fonts/PT-Sans-Narrow/PTN77F-webfont.eot?#iefix') format('embedded-opentype'),
-      url('fonts/PT-Sans-Narrow/PTN77F-webfont.woff') format('woff'),
-      url('fonts/PT-Sans-Narrow/PTN77F-webfont.ttf') format('truetype'),
-      url('fonts/PT-Sans-Narrow/PTN77F-webfont.svg#pt_sans_narrowbold') format('svg')
+  font-family open_sans
+  src: url('fonts/Open-Sans/OpenSans-Light-webfont.eot')
+  src: url('fonts/Open-Sans/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Open-Sans/OpenSans-Light-webfont.woff') format('woff'),
+       url('fonts/Open-Sans/OpenSans-Light-webfont.ttf') format('truetype'),
+       url('fonts/Open-Sans/OpenSans-Light-webfont.svg#open_sans') format('svg');
   font-weight normal
   font-style normal
 
 @font-face
-  font-family open_sansregular
-  src url('fonts/Open-Sans/OpenSans-Regular-webfont.eot')
-  src url('fonts/Open-Sans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-      url('fonts/Open-Sans/OpenSans-Regular-webfont.woff') format('woff'),
-      url('fonts/Open-Sans/OpenSans-Regular-webfont.ttf') format('truetype'),
-      url('fonts/Open-Sans/OpenSans-Regular-webfont.svg#open_sansregular') format('svg')
+  font-family lato
+  src url('fonts/Lato/lato-regular-webfont.eot')
+  src url('fonts/Lato/lato-regular-webfont.eot?#iefix') format('embedded-opentype'),
+      url('fonts/Lato/lato-regular-webfont.woff') format('woff'),
+      url('fonts/Lato/lato-regular-webfont.ttf') format('truetype'),
+      url('fonts/Lato/lato-regular-webfont.svg#lato') format('svg')
   font-weight normal
   font-style normal
 
-@font-face
-  font-family open_sanssemibold
-  src url('fonts/Open-Sans/OpenSans-Semibold-webfont.eot')
-  src url('fonts/Open-Sans/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
-      url('fonts/Open-Sans/OpenSans-Semibold-webfont.woff') format('woff'),
-      url('fonts/Open-Sans/OpenSans-Semibold-webfont.ttf') format('truetype'),
-      url('fonts/Open-Sans/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg')
-  font-weight normal
-  font-style normal
+// color scheme
 
-@font-face
-  font-family montserratbold
-  src url('fonts/Montserrat/montserrat-bold-webfont.eot')
-  src url('fonts/Montserrat/montserrat-bold-webfont.eot?#iefix') format('embedded-opentype'),
-      url('fonts/Montserrat/montserrat-bold-webfont.woff') format('woff'),
-      url('fonts/Montserrat/montserrat-bold-webfont.ttf') format('truetype'),
-      url('fonts/Montserrat/montserrat-bold-webfont.svg#montserratbold') format('svg')
-  font-weight normal
-  font-style normal
+// blue = #0E3C56
+blueNormal = #1C79AE
+blueDark = #1A6F9F
+blueLight = #218ECB
 
-@font-face
-  font-family montserratregular
-  src url('fonts/Montserrat/montserrat-regular-webfont.eot')
-  src url('fonts/Montserrat/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
-      url('fonts/Montserrat/montserrat-regular-webfont.woff') format('woff'),
-      url('fonts/Montserrat/montserrat-regular-webfont.ttf') format('truetype'),
-      url('fonts/Montserrat/montserrat-regular-webfont.svg#montserratregular') format('svg')
-  font-weight normal
-  font-style normal
+// orange = #EF6100
+orangeNormal = #EF6100
+orangeDark = #de5a00
+orangeLight = #ff7212
 
-@font-face
-  font-family mulilight
-  src url('fonts/Muli/muli-light-webfont.eot')
-  src url('fonts/Muli/muli-light-webfont.eot?#iefix') format('embedded-opentype'),
-      url('fonts/Muli/muli-light-webfont.woff') format('woff'),
-      url('fonts/Muli/muli-light-webfont.ttf') format('truetype'),
-      url('fonts/Muli/muli-light-webfont.svg#mulilight') format('svg')
-  font-weight normal
-  font-style normal
 
-@font-face
-  font-family muliregular
-  src url('fonts/Muli/muli-regular-webfont.eot')
-  src url('fonts/Muli/muli-regular-webfont.eot?#iefix') format('embedded-opentype'),
-      url('fonts/Muli/muli-regular-webfont.woff') format('woff'),
-      url('fonts/Muli/muli-regular-webfont.ttf') format('truetype'),
-      url('fonts/Muli/muli-regular-webfont.svg#muliregular') format('svg')
-  font-weight normal
-  font-style normal
+// buttons
 
-// shiny blue theme color
-base-color = #0E3C56
-base-color-normal = #1C79AE
-base-color-dark = #1A6F9F
-base-color-light = #218ECB
+btn-brim(colorNormal)
+  background-color: colorNormal
+  border: none
+  border-radius: 2px
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.2)
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.2)
+  color: #fff
+  font-family: lato, Helvetica, Arial, sans-serif
+  font-size: 1.1rem
+  font-weight: 700
+  height: 34px;
+  padding: 0 14px
+  line-height: 34px
+  letter-spacing: 1px
+  text-transform: uppercase
+  transition: opacity .2s linear
+  &:hover
+  &:focus
+    opacity: 0.9
+    color: @color
 
-// custom style on specific ui elements
+.btn-brim-blue
+  btn-brim(blueNormal)
+
+.btn-brim-orange
+  btn-brim(orangeLight)
+
+// functions
+
+rotate-img(angle)
+  angle = unit(angle, deg)
+  -moz-transform: rotate(angle)
+  -webkit-transform: rotate(angle)
+  -o-transform: rotate(angle)
+  -ms-transform: rotate(angle)
+  transform: rotate(angle)
+
+round-border(size)
+  size = unit(size, px)
+  border-radius: size
+  -moz-border-radius: size
+  -webkit-border-radius: size
+  -o-border-radius: size
+  -ms-border-radius: size
+
+numbered-list()
+  counter-reset: li
+  margin-left: 0px
+  padding-left: 0px
+  li
+    position: relative
+    margin: 0 0 6px 2em
+    padding: 4px 25px
+    list-style: none
+    &:before
+      content: counter(li)
+      counter-increment: li
+      position: absolute
+      top: 4px
+      left: -10px
+      -moz-box-sizing: border-box
+      -webkit-box-sizing: border-box
+      box-sizing: border-box
+      width: 25px
+      height: 25px
+      border-radius: 25px
+      line-height: 25px
+      margin-right: 30px
+      color: #fff
+      background-color: #5cb3e5
+      font-weight: bold
+      text-align: center
+
+// custom style on specific bootstrap ui elements
 
 // form
 .form-landing-page
   margin-top: 30px
   .form-control
     border-radius: 0px
-
-// button
-.btn-brim
-  background-color: base-color-normal
-  border-radius: none
-  border-radius: 0px
-  color: #fff
-  font-family: muliregular, Helvetica, Arial
-  text-shadow: 0 1px 0 rgba(0, 0, 0, .1)
-  &:hover
-  &:focus
-    background-color: base-color-dark
-    color: @color
-
-
+  .error-block
+    color: #b94a48
+    font-size: .8em
 
 // page layout and other styling
 .header-navigation
   background: url('../img/furley_bg.png')
   .brand
-    color: base-color-dark
-    font-family: pt_sans_narrowbold, Helvetica, Arial
-    letter-spacing: -1px
+    font-family: pt_sans, Helvetica, Arial, sans-serif
+    letter-spacing: .8px
     margin: 20px 0
     cursor: pointer
+    text-transform: uppercase
 
-.brand-inline
+.em
   font-weight: bold
-  text-transform: capitalize
 
 .main
-  font-family: open_sansregular
+  font-family: open_sans, Helvetica, Arial, sans-serif
+  min-height: 400px
   .main-header
     text-align: center
+    h1
+      font-family: lato
+      letter-spacing: -1px
+      line-height: 1.3
   .main-content
-    p
     ol
-      color: #737373
+      font-size: 1.5rem
+      numbered-list()
     p:first-child
-      color: #555
+      color: #737373
+      font-size: 2.2rem
+      font-weight: 300
+    .arrow
+      text-align: center
+      img
+        margin: -5px 0 9px
+        rotate-img(5)
+  .btn-holder
+    text-align: center
+  .main-content-thankyou
+    text-align: center
+    p
+      color: #737373
       font-size: 1.3em
-    ol
-      list-style: none
-      li
+  .price-label
+  .price-details
+  .cta
+    round-border(5)
+  .price-label
+    background-color: #1a6f9f
+    color: #fff
+    margin: 10px 0 5px
+    padding: 5px 20px 7px
+    text-align: center
+    .price-tag
+      h2
+        border-bottom: 1px solid rgba(48, 159, 221, 0.6)
+        font-family: lato, Helvetica, Arial, sans-serif
+        font-size: 1.5em
+        margin: 10px 0px 5px
+        text-transform: capitalize
+        text-align: left
+      p
+        margin-bottom: 0
+      .currency
+      .terms
+      .price
+        display: inline-block
+      .currency
+        font-size: 3em
         position: relative
-      .list-stub
-        background-color: base-color-light
-        position: absolute
-        top: 8px
-        left: -12px
-        width: 5px
-        height: 5px
+        bottom: 25px
+      .price
+        margin-left: -7px
+        font-family: lato, Helvetica, Arial, sans-serif
+        letter-spacing: -2px
+        font-size: 6em
+      p:nth-child(2n)
+        // position: relative
+      p:last-child
+        border-top: 1px solid rgba(48, 159, 221, 0.6)
+        font-size: 0.9em
+        text-align: left
+        .who
+          font-weight: bold
+  .price-details
+  .cta
+    padding: 9px 20px
+  .price-details
+    background-color: #e5e5e5
+    color: #333
+    margin-bottom: 5px
+    p
+      margin: 0
+  .cta
+    text-align: center
 
 .footer
   color: rgba(4, 19, 28, 0.3)
@@ -160,4 +238,4 @@ base-color-light = #218ECB
       font-size: 1.6em
       &:hover
       &:focus
-        color: base-color-light
+        color: blueLight

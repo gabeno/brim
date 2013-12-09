@@ -22,7 +22,10 @@
     "stylus": "*",
     "mocha": "*",
     "chai": "*",
-    "sinon": "*"
+    "sinon": "*",
+    "validator": "~2.0.0",
+    "mongoose": "~3.8.1",
+    "nodemailer": "~0.5.13"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

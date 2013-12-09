@@ -1,5 +1,8 @@
 // grunt file
 module.exports = function(grunt) {
+
+  'use strict';
+
   // initialize grunt
   grunt.initConfig({
     // read project settings into the pkg property
@@ -19,42 +22,29 @@ module.exports = function(grunt) {
     },
 
     // JShint: lint javascript files
+    // Ignore external libraries
     jshint: {
       // configure JSHint (see http://www.jshint.com/docs/)
       options: {
-        globals: {
-          jQuery: true,
-          console: true,
-          module: true,
-          jshintrc: 'jshintrc',
-          devel: true,
-          describe: true,
-          it: true,
-          require: true,
-          process: true
-        },
-        indent: 2,
-        undef: true,
-        expr: true,
-        camelcase: true,
-        onevar: true,
-        nomen: true,
-        node: true
+        jshintrc: '.jshintrc',
+        ignores: ['lib/**/*.js']
       },
-      files: {
-        src: [
-          '*.js',
-          'public/js/**/*.js',
-          'test/**/*.js',
-          'routes/**/*.js',
-          'models/**/*.js'
-        ]
-      },
-      ignores: ['public/js/lib/**/*.js']
+      all: [
+        'Gruntfile.js',
+        'brim/**/*.js',
+      ]
     },
 
     // uglify: minify js, css files
-    //uglify: {},
+    uglify: {
+      options: {
+        compress: true
+      },
+      js: {
+        src: 'public/js/lib/**/*.js',
+        dest: 'dist/js/lib/min'
+      }
+    },
 
     // concat: combine files
     //concat: {},
@@ -78,7 +68,9 @@ module.exports = function(grunt) {
         files: [
           { expand: true, cwd: 'public/images', src: ['**'], dest: 'dist/img', filter: 'isFile' },
           { expand: true, cwd: 'public/stylesheets/fonts', src: ['**'], dest: 'dist/styles/fonts' },
-          { expand: true, cwd: 'public/stylesheets/vendor/fa-4.0.3', src: ['**'], dest: 'dist/styles/fa' }
+          { expand: true, cwd: 'public/stylesheets/vendor/fa-4.0.3', src: ['**'], dest: 'dist/styles/fa' },
+          { expand: true, cwd: 'public/js', src: ['**'], dest: 'dist/js' }
+          // { expand: true, cwd: 'public/js', src: ['**'], dest: 'dist/js' }
         ]
       }
     },
@@ -126,6 +118,7 @@ module.exports = function(grunt) {
   // gruntLoadNpmTasks
   grunt.loadNpmTasks('grunt-contrib-stylus');
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-simple-mocha');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-nodemon');
@@ -138,5 +131,7 @@ module.exports = function(grunt) {
   grunt.registerTask('test', ['jshint', 'simplemocha']);
   grunt.registerTask('styles', ['stylus']);
   grunt.registerTask('server', ['concurrent:target']);
+  grunt.registerTask('move', ['copy']);
+  grunt.registerTask('min', ['uglify']);
   //grunt.registerTask('default', ['uglify', 'concat']);
 };
