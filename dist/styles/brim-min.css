@@ -912,7 +912,7 @@ th.hidden-lg,td.hidden-lg{display:table-cell !important;}
 .em{font-weight:bold}
 .main{font-family:open_sans,Helvetica,Arial,sans-serif;min-height:400px;}
 .main .main-header{text-align:center;}
-.main .main-header h1{font-family:lato;letter-spacing:-1px;line-height:1.3}
+.main .main-header h1{color:#555;font-family:lato;line-height:1.3}
 .main .main-content ol{font-size:1.5rem;counter-reset:li;margin-left:0;padding-left:0;}
 .main .main-content ol li{position:relative;margin:0 0 6px 2em;padding:4px 25px;list-style:none;}
 .main .main-content ol li:before{content:counter(li);counter-increment:li;position:absolute;top:4px;left:-10px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;width:25px;height:25px;border-radius:25px;line-height:25px;margin-right:30px;color:#fff;background-color:#5cb3e5;font-weight:bold;text-align:center}
@@ -922,19 +922,20 @@ th.hidden-lg,td.hidden-lg{display:table-cell !important;}
 .main .btn-holder{text-align:center}
 .main .main-content-thankyou{text-align:center;}
 .main .main-content-thankyou p{color:#737373;font-size:1.3em}
-.main .price-label,.main .price-details,.main .cta{border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px}
-.main .price-label{background-color:#1a6f9f;color:#fff;margin:10px 0 5px;padding:5px 20px 7px;text-align:center;}
-.main .price-label .price-tag h2{border-bottom:1px solid rgba(48,159,221,0.6);font-family:lato,Helvetica,Arial,sans-serif;font-size:1.5em;margin:10px 0 5px;text-transform:capitalize;text-align:left}
-.main .price-label .price-tag p{margin-bottom:0}
-.main .price-label .price-tag .currency,.main .price-label .price-tag .terms,.main .price-label .price-tag .price{display:inline-block}
-.main .price-label .price-tag .currency{font-size:3em;position:relative;bottom:25px}
-.main .price-label .price-tag .price{margin-left:-7px;font-family:lato,Helvetica,Arial,sans-serif;letter-spacing:-2px;font-size:6em}
-.main .price-label .price-tag p:last-child{border-top:1px solid rgba(48,159,221,0.6);font-size:.9em;text-align:left;}
-.main .price-label .price-tag p:last-child .who{font-weight:bold}
-.main .price-details,.main .cta{padding:9px 20px}
-.main .price-details{background-color:#e5e5e5;color:#333;margin-bottom:5px;}
-.main .price-details p{margin:0}
-.main .cta{text-align:center}
+.main .prices{float:left;margin-right:5px;min-width:187px;width:47%;}
+.main .prices .price-label,.main .prices .price-details{border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;-ms-border-radius:5px}
+.main .prices .price-label{background-color:#1a6f9f;color:#fff;margin:10px 0 5px;padding:5px 20px 7px;text-align:center;}
+.main .prices .price-label .price-tag h2{border-bottom:1px solid rgba(48,159,221,0.6);font-family:lato,Helvetica,Arial,sans-serif;font-size:1.5em;margin:10px 0 5px;text-transform:capitalize;text-align:left}
+.main .prices .price-label .price-tag p{margin-bottom:0}
+.main .prices .price-label .price-tag .currency,.main .prices .price-label .price-tag .terms,.main .prices .price-label .price-tag .price{display:inline-block}
+.main .prices .price-label .price-tag .currency{font-size:2.2em;position:relative;bottom:25px}
+.main .prices .price-label .price-tag .price{margin-left:-9px;font-family:lato,Helvetica,Arial,sans-serif;letter-spacing:-2px;font-size:4.5em}
+.main .prices .price-label .price-tag p:last-child{border-top:1px solid rgba(48,159,221,0.6);font-size:.9em;margin-bottom:3px;padding-top:7px;text-align:left}
+.main .prices .price-label .price-tag .terms{margin-left:-6px}
+.main .prices .price-details,.main .prices .cta{padding:9px 20px;text-align:center}
+.main .prices .price-details{background-color:#e5e5e5;color:#333;margin-bottom:5px;}
+.main .prices .price-details p{margin:0}
+.main .prices .price-details .none{text-decoration:line-through}
 .footer{color:rgba(4,19,28,0.3);font-size:.9em;margin-top:90px;}
 .footer .footer-inner{border-top:1px solid rgba(4,19,28,0.3);padding:5px 0;}
 .footer .footer-inner a{color:inherit;font-size:1.6em;}
